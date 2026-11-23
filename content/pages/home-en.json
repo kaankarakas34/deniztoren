@@ -1,0 +1,88 @@
+{
+  "headline": "Strategic Financial Clarity,\nActionable Macro Insights & Executive Academy.",
+  "intro": "In-depth research to navigate global financial markets; executive corporate advisory for institutions; rigorous masterclasses designed for decision-makers and investors.",
+  "heroPortrait": null,
+  "heroPortraitAlt": "Deniz Tören",
+  "servicesIntro": "From corporate capital structure to currency hedging, investment feasibility to boardroom strategy: trusted financial guidance.",
+  "educationTitle": "Executive Finance Programmes for Leaders & Professionals",
+  "educationIntro": "Elevate your financial acumen through real market dynamics, live case simulations and interactive cohort sessions.",
+  "servicesPublished": true,
+  "educationPublished": true,
+  "services": [
+    {
+      "title": "Strategic Corporate Advisory & Valuation",
+      "tag": "Executive Advisory",
+      "description": "Optimising capital structure, investment feasibility studies, corporate valuation, and strategic growth financing.",
+      "deliverables": [
+        "3-5 Year dynamic financial modeling & scenario stress-testing",
+        "Investment appraisal, M&A valuation & financial feasibility",
+        "Working capital and cash-flow optimization"
+      ],
+      "actionText": "Request a Consultation"
+    },
+    {
+      "title": "Corporate Treasury & Financial Risk Management",
+      "tag": "Treasury & Risk",
+      "description": "Proactive risk management architectures shielding your balance sheet against FX volatility, interest rate spikes and liquidity pressures.",
+      "deliverables": [
+        "Tailored FX and interest rate risk mapping",
+        "Derivative instruments & corporate hedging strategies",
+        "Treasury guidelines, policy architecture & cash security"
+      ],
+      "actionText": "Request Proposal"
+    },
+    {
+      "title": "Boardroom & C-Level Strategic Counsel",
+      "tag": "Strategic Counsel",
+      "description": "Independent strategic insight and macro forecasting for CEOs, CFOs, and Board of Directors during critical inflection points.",
+      "deliverables": [
+        "Monthly macroeconomic executive briefing & market outlook",
+        "Independent advisory participation in board meetings",
+        "Crisis decision-support desk during macro disruptions"
+      ],
+      "actionText": "Schedule a Meeting"
+    }
+  ],
+  "courses": [
+    {
+      "title": "Macroeconomics & Global Markets Masterclass",
+      "tag": "Most Popular · Live & Interactive",
+      "duration": "4 Weeks · 16 Hours · Live Online",
+      "targetAudience": "Investors, Finance Directors, Analysts",
+      "description": "Learn to interpret central bank balance sheets, interest rate regimes, global liquidity cycles and asset pricing like a fund manager.",
+      "curriculum": [
+        "Fed, ECB & Emerging Market Central Bank Mechanics",
+        "Inflation Dynamics, Yield Curves & Asset Valuation",
+        "Live Market Data & Real-Time Macro Scenario Modeling"
+      ],
+      "actionText": "View Syllabus & Register"
+    },
+    {
+      "title": "Corporate Finance, Business Valuation & Modeling",
+      "tag": "Executive Series · Hands-on Excel",
+      "duration": "3 Weeks · 12 Hours · Workshop",
+      "targetAudience": "CFOs, Finance Managers, Founders",
+      "description": "Master intrinsic enterprise valuation, balance sheet forensics, and actionable investment decision modeling.",
+      "curriculum": [
+        "Discounted Cash Flow (DCF) & Multiples Valuation",
+        "M&A Financial Architecture & Synergy Modeling",
+        "Working Capital Management & Cost of Capital (WACC)"
+      ],
+      "actionText": "View Syllabus & Register"
+    },
+    {
+      "title": "Custom Corporate Finance Training & Workshops",
+      "tag": "Corporate Cohorts · Hybrid",
+      "duration": "Flexible Schedule · Tailored to Company",
+      "targetAudience": "Executive Teams, Treasury & Non-Finance Leaders",
+      "description": "Built around your own corporate balance sheet and industry dynamics to sharpen decision quality and financial intelligence across teams.",
+      "curriculum": [
+        "Financial Statement & Profitability Mastery for Non-Finance Leaders",
+        "Departmental Budgeting & Cash-Flow Discipline",
+        "Risk Awareness & Crisis Management Simulation"
+      ],
+      "actionText": "Request Corporate Proposal"
+    }
+  ],
+  "editorialNote": "Reading data in context, considering different possibilities, and never losing sight of the broader picture. At the heart of this advisory and publication is transforming financial complexity into strategic clarity."
+}

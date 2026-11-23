@@ -1,0 +1,17 @@
+:root {
+  --color-navy: #172b45;
+  --color-ivory: #f7f5f0;
+  --color-gold: #b99562;
+  --color-slate: #334b5e;
+  --color-mist: #e8edf0;
+  --color-white: #ffffff;
+  --color-ink: #1c2733;
+  --color-border: #d9ddd9;
+  --color-muted: #536274;
+  --color-warm-neutral: #efede7;
+  --color-blue-wash: #eef4f9;
+  --color-sky: #bfd5e6;
+  --page-width: 80rem;
+  --reading-width: 45rem;
+  --page-gutter: clamp(1.25rem, 5vw, 4rem);
+}

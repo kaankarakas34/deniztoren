@@ -1,0 +1,31 @@
+{
+  "verifiedDate": "2026-11-03",
+  "note": "ref records the source revision observed during initial verification. CLI-installed skill hashes live in skills-lock.json; ui-ux-pro-max is pinned and installed with the reviewed skill-installer helper.",
+  "sources": [
+    {
+      "repo": "anthropics/skills",
+      "ref": "ca45fc496a3436251f191354091d557da31c15b5",
+      "skills": ["frontend-design"],
+      "license": "Apache-2.0"
+    },
+    {
+      "repo": "vercel-labs/agent-skills",
+      "ref": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+      "skills": ["vercel-react-best-practices", "web-design-guidelines"],
+      "license": "MIT (skill metadata)"
+    },
+    {
+      "repo": "greensock/gsap-skills",
+      "ref": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "skills": ["gsap-react", "gsap-scrolltrigger", "gsap-performance"],
+      "license": "MIT"
+    },
+    {
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "ref": "713eef51b04efc98d6fa565323b495f7c9c89fd4",
+      "skills": ["ui-ux-pro-max"],
+      "license": "MIT",
+      "pinnedInstall": true
+    }
+  ]
+}

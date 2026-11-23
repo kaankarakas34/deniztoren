@@ -1,0 +1,88 @@
+{
+  "headline": "Finansal Kararlarda Stratejik Netlik,\nGüncel Piyasa Analizleri ve İleri Düzey Eğitimler.",
+  "intro": "Küresel piyasalarda yönü doğru tayin etmek için derinlikli analizler; şirketiniz için kurumsal finans danışmanlığı; kariyeriniz ve yatırımlarınız için yönetici düzeyinde eğitim programları.",
+  "heroPortrait": null,
+  "heroPortraitAlt": "Deniz Tören",
+  "servicesIntro": "Şirketinizin sermaye yapısından kur risklerine, yatırım kararlarından yönetim kurulu stratejilerine kadar güvenilir finansal rehberlik.",
+  "educationTitle": "Karar Vericiler ve Profesyoneller İçin İleri Finans Programları",
+  "educationIntro": "Gerçek piyasa dinamikleri, canlı vaka simülasyonları ve interaktif oturumlarla finansal yetkinliğinizi en üst seviyeye taşıyın.",
+  "servicesPublished": true,
+  "educationPublished": true,
+  "services": [
+    {
+      "title": "Stratejik Finans & Yatırım Danışmanlığı",
+      "tag": "Yönetici Danışmanlığı",
+      "description": "Sermaye yapısının optimize edilmesi, yatırım fizibilite çalışmaları, şirket değerleme ve büyüme senaryolarında üst düzey karar desteği.",
+      "deliverables": [
+        "3-5 Yıllık dinamik finansal modelleme ve senaryo simülasyonları",
+        "Yatırım fizibilitesi ve birleşme/satın alma (M&A) değerlemesi",
+        "Çalışma sermayesi ve nakit akış yönetimi optimizasyonu"
+      ],
+      "actionText": "Görüşme Talep Edin"
+    },
+    {
+      "title": "Kurumsal Hazine & Finansal Risk Yönetimi",
+      "tag": "Hazine & Risk Mimarisi",
+      "description": "Döviz kurları, faiz oranları ve küresel likidite dalgalanmalarına karşı şirketinizi koruyan proaktif risk yönetimi modelleri.",
+      "deliverables": [
+        "Şirkete özel döviz ve faiz risk haritası oluşturulması",
+        "Türev ürünler ve korunma (hedging) stratejileri",
+        "Kurumsal hazine yönetmeliği ve nakit koruma politikaları"
+      ],
+      "actionText": "Teklif & Detay Alın"
+    },
+    {
+      "title": "Yönetim Kurulu & C-Level Karar Desteği",
+      "tag": "Stratejik Akıl & Mentörlük",
+      "description": "CEO, CFO ve Yönetim Kurulları için makroekonomik trendler, küresel dengeler ve kritik eşiklerde bağımsız stratejik akıl.",
+      "deliverables": [
+        "Aylık makroekonomik yönetici brifingi ve piyasa projeksiyonları",
+        "Yönetim kurulu toplantılarına bağımsız stratejik katılım",
+        "Belirsizlik ve piyasa şokları dönemi kriz karar destek masası"
+      ],
+      "actionText": "Görüşme Planlayın"
+    }
+  ],
+  "courses": [
+    {
+      "title": "Makroekonomi & Küresel Piyasaları Okuma Masterclass",
+      "tag": "Popüler · Canlı & İnteraktif",
+      "duration": "4 Hafta · 16 Saat · Canlı Online",
+      "targetAudience": "Yatırımcılar, Finans Yöneticileri, Analistler",
+      "description": "Merkez bankaları bilançoları, faiz döngüleri, küresel likidite akımları ve döviz-emtia hareketlerini profesyonel bir fon yöneticisi gözüyle okumayı öğrenin.",
+      "curriculum": [
+        "Fed, ECB ve TCMB Faiz & Likidite Politikaları",
+        "Enflasyon, Getiri Eğrisi (Yield Curve) ve Varlık Fiyatlaması",
+        "Canlı Piyasa Verileriyle Makro Senaryo Simülasyonu"
+      ],
+      "actionText": "Müfredatı Gör & Ön Kayıt Ol"
+    },
+    {
+      "title": "Kurumsal Finans, Şirket Değerleme ve Modelleme",
+      "tag": "Yönetici Serisi · Uygulamalı Excel",
+      "duration": "3 Hafta · 12 Saat · Uygulamalı Atölye",
+      "targetAudience": "CFO'lar, Finans Müdürleri, Girişimciler",
+      "description": "Bir şirketin gerçek değerini hesaplama, bilanço dinamiklerini analiz etme ve yatırım kararlarını profesyonelce modelleme yetkinliği kazanın.",
+      "curriculum": [
+        "İndirgenmiş Nakit Akımları (DCF) ve Çarpanlar Yöntemi",
+        "Şirket Birleşmeleri (M&A) ve Sinerji Modellemesi",
+        "Çalışma Sermayesi ve Sermaye Maliyeti (WACC) Hesabı"
+      ],
+      "actionText": "Müfredatı Gör & Ön Kayıt Ol"
+    },
+    {
+      "title": "Kurumlara Özel Finans Eğitimi & Şirket İçi Atölyeler",
+      "tag": "Kurumsal Özel · Yüz Yüze / Hibrit",
+      "duration": "Esnek Takvim · Şirketinize Uyarlanmış",
+      "targetAudience": "Yönetim Ekipleri, Hazine ve Finans Dışı Yöneticiler",
+      "description": "Şirketinizin kendi mali tabloları ve sektör dinamikleri üzerinden kurgulanan; karar kalitesini ve finansal okuryazarlığı artıran kurumsal program.",
+      "curriculum": [
+        "Finans Dışı Yöneticiler İçin Bilanço ve Kârlılık Okuma",
+        "Departman Bütçeleri ve Nakit Akışı Yönetimi",
+        "Risk Farkındalığı ve Kriz Dönemi Karar Alma Simülasyonu"
+      ],
+      "actionText": "Kurumsal Teklif İsteyin"
+    }
+  ],
+  "editorialNote": "Veriyi bağlamıyla okumak, farklı olasılıkları birlikte düşünmek ve büyük resmi gözden kaçırmamak. Bu yayının ve danışmanlık anlayışımın temelinde finansı karmaşıklıktan arındırıp stratejiye dönüştürmek var."
+}
