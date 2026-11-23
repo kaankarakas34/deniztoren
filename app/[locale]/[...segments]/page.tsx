@@ -6,6 +6,10 @@ import {
   LegalPage,
   MediaPage,
 } from '@/components/editorial/secondary-pages';
+import {
+  AcademyPage,
+  ServicesPage,
+} from '@/components/editorial/offerings-pages';
 import { Article } from '@/components/article/article';
 import { getPost, getTranslation, postHref } from '@/lib/content';
 import { textFor } from '@/lib/copy';
@@ -99,6 +103,8 @@ export default async function Page({ params, searchParams }: Props) {
   }
   if (segments.length !== 1) notFound();
   const query = await searchParams;
+  if (section === 'services') return <ServicesPage locale={locale} />;
+  if (section === 'education') return <AcademyPage locale={locale} />;
   if (section === 'articles' || section === 'analysis' || section === 'search')
     return <Archive locale={locale} query={query} mode={section} />;
   if (section === 'about') return <AboutPage locale={locale} />;

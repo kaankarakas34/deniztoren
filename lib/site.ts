@@ -26,6 +26,8 @@ export const categoryNames: Record<Locale, Record<Category, string>> = {
 };
 export const segments = {
   tr: {
+    services: 'hizmetler',
+    education: 'egitimler',
     articles: 'yazilar',
     analysis: 'piyasa-analizleri',
     media: 'medya',
@@ -37,6 +39,8 @@ export const segments = {
     disclaimer: 'uyari',
   },
   en: {
+    services: 'services',
+    education: 'academy',
     articles: 'articles',
     analysis: 'market-analysis',
     media: 'media',

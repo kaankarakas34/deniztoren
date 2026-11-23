@@ -3,6 +3,8 @@ const copy = {
   tr: {
     nav: {
       home: 'Ana Sayfa',
+      services: 'Hizmetler',
+      education: 'Eğitimler',
       articles: 'Yazılar',
       analysis: 'Piyasa Analizleri',
       media: 'Medya',
@@ -81,6 +83,8 @@ const copy = {
   en: {
     nav: {
       home: 'Home',
+      services: 'Services',
+      education: 'Academy',
       articles: 'Articles',
       analysis: 'Market Analysis',
       media: 'Media',

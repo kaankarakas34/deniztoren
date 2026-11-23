@@ -8,6 +8,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const locale of ['tr', 'en'] as Locale[]) {
     for (const section of [
       undefined,
+      'services',
+      'education',
       'articles',
       'analysis',
       'media',

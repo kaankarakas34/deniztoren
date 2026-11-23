@@ -1,5 +1,13 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Building2,
+  GraduationCap,
+  Mail,
+  TrendingUp,
+} from 'lucide-react';
 import {
   getAbout,
   getHome,
@@ -106,52 +114,160 @@ export async function MediaPage({
 export async function AboutPage({ locale }: { locale: Locale }) {
   const [about, home] = await Promise.all([getAbout(locale), getHome(locale)]);
   const t = textFor(locale);
+  const tr = locale === 'tr';
   const bio = about
     ? prepareDocument((await about.biography()).node)
     : undefined;
+  const portrait = about?.portrait || home?.heroPortrait;
+  const portraitAlt = about?.portraitAlt || home?.heroPortraitAlt || 'Deniz Tören';
+
+  const focusAreas = about?.expertise?.length
+    ? about.expertise
+    : tr
+      ? [
+          'Küresel Makroekonomi ve Merkez Bankası Politikaları',
+          'Kurumsal Finans, Sermaye Yapısı ve Şirket Değerleme',
+          'Kurumsal Hazine, Likidite ve Finansal Risk Yönetimi',
+          'Yönetici Finans Eğitimi ve Karar Okuryazarlığı',
+        ]
+      : [
+          'Global Macroeconomics & Central Bank Policy Regimes',
+          'Corporate Finance, Capital Structure & Valuation',
+          'Corporate Treasury, Liquidity & Financial Risk Management',
+          'Executive Finance Education & Decision Literacy',
+        ];
+
   return (
-    <div className="container">
-      <div className="page-heading">
-        <p className="eyebrow">Deniz Tören</p>
-        <h1>{t.nav.about}</h1>
-        <p>
-          {about?.intro ||
-            (locale === 'tr'
-              ? 'Finansı anlamak. Gelişmeleri yorumlamak. Büyük resmi görmek.'
-              : 'Understanding finance. Interpreting markets. Seeing the bigger picture.')}
-        </p>
-      </div>
-      <div className="simple-content">
-        {bio ? (
-          <div className="prose">{bio.content}</div>
-        ) : (
-          <>
-            <h2>{t.editorial}</h2>
-            <p>{home?.editorialNote}</p>
-            <p className="notice">
-              {locale === 'tr'
-                ? 'Biyografi ve profesyonel profil, onaylı bilgilerle yayına hazırlanıyor.'
-                : 'The biography and professional profile are being prepared with verified information.'}
+    <div className="subpage-shell">
+      <section className="subpage-hero">
+        <div className="container about-hero-grid">
+          <div className="subpage-hero-copy">
+            <h1>Deniz Tören</h1>
+            <p className="subpage-hero-lead">
+              {about?.intro ||
+                (tr
+                  ? 'Finansı anlamak, küresel gelişmeleri bağlamıyla yorumlamak ve stratejik kararlarda büyük resmi görmek.'
+                  : 'Understanding finance, interpreting global markets in context and keeping the bigger picture in view.')}
             </p>
-          </>
-        )}
-        {about?.expertise.length ? (
-          <>
-            <h2>{locale === 'tr' ? 'Uzmanlık Alanları' : 'Areas of Focus'}</h2>
+            <div className="subpage-hero-actions">
+              <Link className="button-gold" href={href(locale, 'services')}>
+                {tr ? 'Danışmanlık Hizmetleri' : 'Advisory Services'}
+                <ArrowRight size={17} aria-hidden="true" />
+              </Link>
+              <Link
+                className="button-secondary-light"
+                href={href(locale, 'contact')}
+              >
+                {t.nav.contact}
+              </Link>
+            </div>
+          </div>
+
+          {portrait ? (
+            <figure className="portrait-frame about-portrait">
+              <Image
+                src={portrait}
+                alt={portraitAlt}
+                fill
+                sizes="(max-width: 760px) 100vw, 360px"
+                className="portrait-image"
+                priority
+              />
+            </figure>
+          ) : (
+            <div className="about-monogram-box" aria-hidden="true">
+              <span>DT</span>
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section className="subpage-section bg-white">
+        <div className="container about-content-grid">
+          <div className="about-narrative">
+            <h2 className="section-heading-serif">{t.editorial}</h2>
+            {bio ? (
+              <div className="prose">{bio.content}</div>
+            ) : (
+              <div className="about-prose-stack">
+                <p>
+                  {home?.editorialNote ||
+                    (tr
+                      ? 'Veriyi bağlamıyla okumak, farklı olasılıkları birlikte düşünmek ve büyük resmi gözden kaçırmamak. Bu yayının ve danışmanlık anlayışının odağında, finansı karmaşıklıktan arındırıp stratejik değere dönüştürmek var.'
+                      : 'Reading data in context, weighing competing scenarios and never losing sight of the broader picture. Transforming financial complexity into strategic clarity sits at the core of this practice.')}
+                </p>
+                <p>
+                  {tr
+                    ? 'Deniz Tören platformu üç birbirini besleyen disiplini bir araya getirir: kurumlar ve yönetim kurulları için bağımsız finansal danışmanlık, profesyoneller için uygulamalı finans akademisi ve piyasa gürültüsünden uzak editoryal makro analizler.'
+                    : 'This platform brings together three mutually reinforcing disciplines: independent financial advisory for enterprises and boards, an applied executive finance academy, and calm, noise-free macroeconomic research.'}
+                </p>
+              </div>
+            )}
+          </div>
+
+          <aside className="about-focus-panel">
+            <h3>{tr ? 'Çalışma ve Odak Alanları' : 'Areas of Focus'}</h3>
             <ul>
-              {about.expertise.map((item) => (
+              {focusAreas.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-          </>
-        ) : null}
-        <Link className="text-link" href={href(locale, 'contact')}>
-          {t.nav.contact} →
-        </Link>
-      </div>
+          </aside>
+        </div>
+      </section>
+
+      <section className="subpage-section bg-ivory">
+        <div className="container">
+          <div className="about-bridge-grid">
+            <Link href={href(locale, 'services')} className="bridge-link-row">
+              <Building2 size={20} className="gold-icon" aria-hidden="true" />
+              <div>
+                <strong>{tr ? 'Hizmetler & Danışmanlık' : 'Advisory & Services'}</strong>
+                <span>
+                  {tr
+                    ? 'Kurumsal finans, hazine, değerleme ve C-level karar desteği'
+                    : 'Corporate finance, treasury, valuation & boardroom counsel'}
+                </span>
+              </div>
+              <ArrowRight size={17} aria-hidden="true" />
+            </Link>
+
+            <Link href={href(locale, 'education')} className="bridge-link-row">
+              <GraduationCap
+                size={20}
+                className="gold-icon"
+                aria-hidden="true"
+              />
+              <div>
+                <strong>{tr ? 'Finans Akademisi' : 'Finance Academy'}</strong>
+                <span>
+                  {tr
+                    ? 'Canlı makroekonomi, şirket değerleme ve kurum içi atölyeler'
+                    : 'Live macroeconomics, valuation & custom corporate cohorts'}
+                </span>
+              </div>
+              <ArrowRight size={17} aria-hidden="true" />
+            </Link>
+
+            <Link href={href(locale, 'articles')} className="bridge-link-row">
+              <TrendingUp size={20} className="gold-icon" aria-hidden="true" />
+              <div>
+                <strong>{tr ? 'Yazılar & Analizler' : 'Articles & Analysis'}</strong>
+                <span>
+                  {tr
+                    ? 'Küresel ekonomi, piyasalar ve strateji üzerine derinlemesine notlar'
+                    : 'In-depth commentary on the global economy and financial markets'}
+                </span>
+              </div>
+              <ArrowRight size={17} aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
+
 export async function ContactPage({
   locale,
   service,
@@ -194,62 +310,137 @@ export async function ContactPage({
       : `mailto:${email}`
     : undefined;
 
+  const pathways = tr
+    ? [
+        {
+          icon: Building2,
+          title: 'Kurumsal Danışmanlık & Ön Görüşme',
+          desc: 'Sermaye yapısı, hazine/risk yönetimi veya yönetim kurulu danışmanlığı için gizli ön toplantı talep edin.',
+          subject: 'Danışmanlık Talebi — Ön Görüşme',
+        },
+        {
+          icon: GraduationCap,
+          title: 'Eğitim Ön Kayıt & Kurumsal Teklif',
+          desc: 'Masterclass dönem takvimi, örnek müfredat veya şirket içi grup eğitimi için bilgi alın.',
+          subject: 'Finans Akademisi — Kayıt / Bilgi Talebi',
+        },
+        {
+          icon: TrendingUp,
+          title: 'Basın, Konuşma & Editoryal İletişim',
+          desc: 'Konferans konuşmaları, medya değerlendirmeleri veya yayınlara dair okuyucu soruları.',
+          subject: 'Medya & Editoryal İletişim',
+        },
+      ]
+    : [
+        {
+          icon: Building2,
+          title: 'Corporate Advisory & Discovery Call',
+          desc: 'Request a confidential introductory meeting for corporate finance, treasury risk or boardroom counsel.',
+          subject: 'Advisory Inquiry — Discovery Call',
+        },
+        {
+          icon: GraduationCap,
+          title: 'Academy Registration & Corporate Cohorts',
+          desc: 'Enquire about upcoming masterclass dates, sample syllabi or custom in-house workshops.',
+          subject: 'Finance Academy — Registration / Enquiry',
+        },
+        {
+          icon: TrendingUp,
+          title: 'Media, Speaking & Editorial',
+          desc: 'Keynote invitations, press commentary and reader correspondence regarding published research.',
+          subject: 'Media & Editorial Enquiry',
+        },
+      ];
+
   return (
-    <div className="container">
-      <div className="page-heading">
-        <h1>{t.nav.contact}</h1>
-        <p>
-          {tr
-            ? 'Kurumsal danışmanlık, yönetici eğitimleri, medya talepleri veya analizler hakkında doğrudan iletişime geçebilirsiniz.'
-            : 'Reach out directly for corporate advisory, executive finance programmes, media enquiries or editorial correspondence.'}
-        </p>
-      </div>
-      <div className="simple-content">
-        {selectedTopic ? (
-          <div className="inquiry-context-banner">
-            <span className="inquiry-context-label">{topicTypeLabel}</span>
-            <p className="inquiry-context-title">{selectedTopic}</p>
-            <p className="inquiry-context-note">
+    <div className="subpage-shell">
+      <section className="subpage-hero">
+        <div className="container subpage-hero-inner">
+          <div className="subpage-hero-copy">
+            <h1>{t.nav.contact}</h1>
+            <p className="subpage-hero-lead">
               {tr
-                ? 'Aşağıdaki e-posta bağlantısına tıkladığınızda konu başlığı otomatik olarak doldurulacaktır.'
-                : 'Clicking the email link below will pre-fill the subject line for this inquiry.'}
+                ? 'Kurumsal danışmanlık, yönetici eğitimleri, medya talepleri veya analizler hakkında gizlilik esaslı doğrudan iletişime geçebilirsiniz.'
+                : 'Reach out directly and confidentially for corporate advisory, executive finance programmes, speaking engagements or editorial enquiries.'}
             </p>
           </div>
-        ) : null}
+        </div>
+      </section>
 
-        <h2>
-          {tr ? 'Gizlilik esaslı doğrudan iletişim.' : 'Direct & confidential.'}
-        </h2>
-        <p>
-          {tr
-            ? 'Danışmanlık kapsamı, eğitim takvimi, kurum içi atölye teklifleri ve basın talepleri için doğrudan e-posta gönderebilirsiniz.'
-            : 'Send an email directly for advisory scope, cohort dates, custom corporate workshops or press enquiries.'}
-        </p>
-        {email && mailtoHref ? (
-          <p>
-            <a className="contact-address" href={mailtoHref}>
-              {email}
-            </a>
-          </p>
-        ) : (
-          <p className="notice">
-            {tr
-              ? 'İletişim e-posta adresi henüz yayınlanmadı. Güncel iletişim bilgileri burada paylaşılacak.'
-              : 'The contact email has not been published yet. Updated contact details will be shared here.'}
-          </p>
-        )}
-        {linkedin ? (
-          <a
-            className="text-link"
-            href={linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-            <ArrowUpRight size={16} />
-          </a>
-        ) : null}
-      </div>
+      <section className="subpage-section bg-white">
+        <div className="container contact-split-layout">
+          <div className="contact-primary-column">
+            {selectedTopic ? (
+              <div className="inquiry-context-banner">
+                <span className="inquiry-context-label">{topicTypeLabel}</span>
+                <p className="inquiry-context-title">{selectedTopic}</p>
+                <p className="inquiry-context-note">
+                  {tr
+                    ? 'Aşağıdaki e-posta bağlantısına tıkladığınızda konu başlığı otomatik olarak doldurulacaktır.'
+                    : 'Clicking the email button below pre-fills the subject line for this inquiry.'}
+                </p>
+              </div>
+            ) : null}
+
+            <h2 className="section-heading-serif">
+              {tr ? 'Doğrudan E-Posta & Kanallar' : 'Direct Channels'}
+            </h2>
+            <p className="section-lead-text">
+              {tr
+                ? 'Tüm kurumsal ve bireysel talepler doğrudan değerlendirilir ve en geç 2 iş günü içinde yanıtlanır.'
+                : 'All corporate and individual enquiries are reviewed directly and answered within two business days.'}
+            </p>
+
+            {email && mailtoHref ? (
+              <div className="contact-direct-actions">
+                <a className="button-navy" href={mailtoHref}>
+                  <Mail size={17} aria-hidden="true" />
+                  <span>{email}</span>
+                </a>
+                {linkedin ? (
+                  <a
+                    className="text-secondary-link"
+                    href={linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LinkedIn
+                    <ArrowUpRight size={16} aria-hidden="true" />
+                  </a>
+                ) : null}
+              </div>
+            ) : (
+              <p className="notice">
+                {tr
+                  ? 'İletişim e-posta adresi henüz yayınlanmadı.'
+                  : 'The contact email has not been published yet.'}
+              </p>
+            )}
+          </div>
+
+          <div className="contact-pathways-column">
+            <h3>{tr ? 'Konuya Göre Hızlı İletişim' : 'Select an Enquiry Topic'}</h3>
+            <div className="contact-pathways-list">
+              {pathways.map((item) => {
+                const Icon = item.icon;
+                const pathwayHref = email
+                  ? `mailto:${email}?subject=${encodeURIComponent(item.subject)}`
+                  : '#';
+                return (
+                  <a key={item.title} href={pathwayHref} className="pathway-row">
+                    <Icon size={19} className="gold-icon" aria-hidden="true" />
+                    <div>
+                      <strong>{item.title}</strong>
+                      <p>{item.desc}</p>
+                    </div>
+                    <ArrowUpRight size={16} aria-hidden="true" />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

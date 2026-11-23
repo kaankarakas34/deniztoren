@@ -395,18 +395,21 @@ export async function EditorialHome({ locale }: { locale: Locale }) {
             </p>
 
             <div className="hero-actions">
-              <a className="button-gold" href="#services">
+              <Link className="button-gold" href={href(locale, 'services')}>
                 {tr ? 'Danışmanlık Hizmetleri' : 'Consulting Services'}
                 <ArrowRight size={17} aria-hidden="true" />
-              </a>
-              <a className="button-secondary-light" href="#education">
+              </Link>
+              <Link
+                className="button-secondary-light"
+                href={href(locale, 'education')}
+              >
                 <GraduationCap size={17} aria-hidden="true" />
                 {tr ? 'Eğitim Programları' : 'Executive Academy'}
-              </a>
-              <a className="hero-text-link" href="#news">
+              </Link>
+              <Link className="hero-text-link" href={href(locale, 'articles')}>
                 {tr ? 'Son Piyasa Analizleri' : 'Latest Market Insights'}
                 <ArrowUpRight size={15} aria-hidden="true" />
-              </a>
+              </Link>
             </div>
 
             <div className="hero-capabilities">
@@ -521,7 +524,7 @@ export async function EditorialHome({ locale }: { locale: Locale }) {
                   className="dossier-index"
                   aria-label={tr ? 'Hızlı erişim' : 'Quick navigation'}
                 >
-                  <a href="#services" className="dossier-row">
+                  <Link href={href(locale, 'services')} className="dossier-row">
                     <div>
                       <span className="dossier-row-title">
                         {tr
@@ -535,9 +538,9 @@ export async function EditorialHome({ locale }: { locale: Locale }) {
                       </span>
                     </div>
                     <ArrowRight size={16} aria-hidden="true" />
-                  </a>
+                  </Link>
 
-                  <a href="#education" className="dossier-row">
+                  <Link href={href(locale, 'education')} className="dossier-row">
                     <div>
                       <span className="dossier-row-title">
                         {tr
@@ -551,9 +554,9 @@ export async function EditorialHome({ locale }: { locale: Locale }) {
                       </span>
                     </div>
                     <ArrowRight size={16} aria-hidden="true" />
-                  </a>
+                  </Link>
 
-                  <a href="#news" className="dossier-row">
+                  <Link href={href(locale, 'articles')} className="dossier-row">
                     <div>
                       <span className="dossier-row-title">
                         {tr
@@ -567,7 +570,7 @@ export async function EditorialHome({ locale }: { locale: Locale }) {
                       </span>
                     </div>
                     <ArrowRight size={16} aria-hidden="true" />
-                  </a>
+                  </Link>
                 </nav>
               </div>
             )}

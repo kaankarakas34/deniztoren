@@ -49,15 +49,15 @@ export function Header({ locale }: { locale: Locale }) {
 
   const primaryNavigation = [
     {
-      label: locale === 'tr' ? 'Hizmetler' : 'Services',
-      url: `${href(locale)}#services`,
+      label: t.nav.services,
+      url: href(locale, 'services'),
     },
     {
-      label: locale === 'tr' ? 'Eğitimler' : 'Academy',
-      url: `${href(locale)}#education`,
+      label: t.nav.education,
+      url: href(locale, 'education'),
     },
     {
-      label: locale === 'tr' ? 'Yazılar' : 'Articles',
+      label: t.nav.articles,
       url: href(locale, 'articles'),
     },
     { label: t.nav.about, url: href(locale, 'about') },

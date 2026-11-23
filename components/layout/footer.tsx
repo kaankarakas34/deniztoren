@@ -41,25 +41,25 @@ export function Footer({ locale }: { locale: Locale }) {
           <h5>{tr ? 'Hizmetler & Danışmanlık' : 'Advisory & Services'}</h5>
           <ul>
             <li>
-              <a href={`${href(locale)}#services`}>
+              <Link href={href(locale, 'services')}>
                 {tr
                   ? 'Stratejik Finans Danışmanlığı'
                   : 'Strategic Corporate Advisory'}
-              </a>
+              </Link>
             </li>
             <li>
-              <a href={`${href(locale)}#services`}>
+              <Link href={href(locale, 'services')}>
                 {tr
                   ? 'Kurumsal Hazine & Risk Yönetimi'
                   : 'Treasury & Risk Management'}
-              </a>
+              </Link>
             </li>
             <li>
-              <a href={`${href(locale)}#services`}>
+              <Link href={href(locale, 'services')}>
                 {tr
                   ? 'Yönetim Kurulu Karar Desteği'
                   : 'Boardroom & C-Level Counsel'}
-              </a>
+              </Link>
             </li>
             <li>
               <Link href={href(locale, 'contact')}>
@@ -74,23 +74,23 @@ export function Footer({ locale }: { locale: Locale }) {
           <h5>{tr ? 'Finans Akademisi' : 'Finance Academy'}</h5>
           <ul>
             <li>
-              <a href={`${href(locale)}#education`}>
+              <Link href={href(locale, 'education')}>
                 {tr ? 'Makroekonomi Masterclass' : 'Macroeconomics Masterclass'}
-              </a>
+              </Link>
             </li>
             <li>
-              <a href={`${href(locale)}#education`}>
+              <Link href={href(locale, 'education')}>
                 {tr
                   ? 'Şirket Değerleme & Modelleme'
                   : 'Corporate Valuation & Modeling'}
-              </a>
+              </Link>
             </li>
             <li>
-              <a href={`${href(locale)}#education`}>
+              <Link href={href(locale, 'education')}>
                 {tr
                   ? 'Kurumlara Özel Finans Atölyesi'
                   : 'Tailored Corporate Cohorts'}
-              </a>
+              </Link>
             </li>
             <li>
               <Link href={href(locale, 'contact')}>
